@@ -42,7 +42,7 @@
    &kp CAPS   &kp LC(Q) &kp LC(W) &kp LC(E) &kp LC(R) &kp LC(T)   &kp LS(LEFT) &kp LS(DOWN)  &kp LS(UP)     &kp LS(RIGHT)   &none    &none
    &kp LC(EQUAL) &kp LC(A) &mo SYSTEM &kp LC(D) &mo FUNCTION &mo WINDOW_MANAGER   &kp LEFT &kp DOWN  &kp UP     &kp RIGHT   &kp LC(MINUS) &trans
    &trans &kp LC(Z) &kp LC(X) &kp LC(C) &kp LC(V) &kp LC(B)   &kp HOME &kp PG_DN  &kp PG_UP &kp END &trans &trans
-                  &kp LGUI &mo 1 &kp SPACE   &kp RSHIFT &mo LC(BSPC) &trans
+                  &kp LGUI &mo 1 &kp SPACE   &kp RSHIFT &kp LC(BSPC) &trans
                         >;
                 };
 
