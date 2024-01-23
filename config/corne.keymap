@@ -45,7 +45,7 @@
             wait-ms = <30>;
             tap-ms = <40>;
             bindings =
-            <&kp N1>, <&kp N1>, <&kp N5>, <&kp N5>, <&kp N1>, <&kp N9>, <&kp N3>, <&kp N5>, <&kp N0>, <&kp N6>, <&kp AT>, <&kp L>, <&kp I>, <&kp N>, <&kp K>, <&kp DOT>, <&kp C>, <&kp U>, <&kp H>, <&kp K>, <&kp DOT>, <&kp E>, <&kp D>, <&kp U>, <&kp DOT>, <&kp H>, <&kp K>,
+            <&kp N1>, <&kp N1>, <&kp N5>, <&kp N5>, <&kp N1>, <&kp N9>, <&kp N3>, <&kp N5>, <&kp N0>, <&kp N6>, <&kp AT>, <&kp L>, <&kp I>, <&kp N>, <&kp K>, <&kp DOT>, <&kp C>, <&kp U>, <&kp H>, <&kp K>, <&kp DOT>, <&kp E>, <&kp D>, <&kp U>, <&kp DOT>, <&kp H>, <&kp K>
                 ;};
 
         my_name: my_name {
@@ -72,7 +72,7 @@
             wait-ms = <30>;
             tap-ms = <40>;
             bindings =
-<&kp F>, <&kp L>, <&kp A>, <&kp T>, <&kp SPACE>, <&kp 1>, <&kp 1>, <&kp 0>, <&kp 9>, <&kp COMMA>, <&kp SPACE>, <&kp L>, <&kp A>, <&kp P>, <&kp SPACE>, <&kp W>, <&kp A>, <&kp H>, <&kp SPACE>, <&kp H>, <&kp O>, <&kp U>, <&kp S>, <&kp E>, <&kp COMMA>, <&kp SPACE>, <&kp L>, <&kp O>, <&kp K>, <&kp SPACE>, <&kp W>, <&kp A>, <&kp H>, <&kp SPACE>, <&kp N>, <&kp O>, <&kp R>, <&kp T>, <&kp H>, <&kp SPACE>, <&kp E>, <&kp S>, <&kp T>, <&kp A>, <&kp T>, <&kp E>, <&kp COMMA>, <&kp SPACE>, <&kp N>, <&kp G>, <&kp A>, <&kp U>, <&kp SPACE>, <&kp T>, <&kp A>, <&kp U>, <&kp SPACE>, <&kp K>, <&kp O>, <&kp K>,
+<&kp F>, <&kp L>, <&kp A>, <&kp T>, <&kp SPACE>, <&kp 1>, <&kp 1>, <&kp 0>, <&kp 9>, <&kp COMMA>, <&kp SPACE>, <&kp L>, <&kp A>, <&kp P>, <&kp SPACE>, <&kp W>, <&kp A>, <&kp H>, <&kp SPACE>, <&kp H>, <&kp O>, <&kp U>, <&kp S>, <&kp E>, <&kp COMMA>, <&kp SPACE>, <&kp L>, <&kp O>, <&kp K>, <&kp SPACE>, <&kp W>, <&kp A>, <&kp H>, <&kp SPACE>, <&kp N>, <&kp O>, <&kp R>, <&kp T>, <&kp H>, <&kp SPACE>, <&kp E>, <&kp S>, <&kp T>, <&kp A>, <&kp T>, <&kp E>, <&kp COMMA>, <&kp SPACE>, <&kp N>, <&kp G>, <&kp A>, <&kp U>, <&kp SPACE>, <&kp T>, <&kp A>, <&kp U>, <&kp SPACE>, <&kp K>, <&kp O>, <&kp K>
                 ;};
 
         cuhk_sid: cuhk_sid {
