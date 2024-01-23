@@ -103,7 +103,7 @@
    &kp LS(TAB)   &kp TILDE &kp GRAVE &kp LBRC &kp LBKT &kp LPAR   &kp RPAR &kp RBKT  &kp RBRC     &kp BSLH   &kp PIPE    &kp DQT
    &kp PLUS &kp N1 &kp N2 &kp N3 &kp N4 &kp N5   &kp N6 &kp N7  &kp N8     &kp N9   &kp N0 &kp UNDER
    &trans &kp LS(Z) &kp LS(X) &kp LS(C) &kp LS(V) &kp LS(B)   &none &trans  &trans &trans &trans &trans
-                  &FUNCTION &trans &trans   &trans &mo FUNCTION &mo BLUETOOTH
+                  &mo FUNCTION &trans &trans   &trans &mo FUNCTION &mo BLUETOOTH
                         >;
                 };
 
