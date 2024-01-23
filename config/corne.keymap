@@ -54,7 +54,7 @@
             wait-ms = <30>;
             tap-ms = <40>;
             bindings =
-<&kp LS(s)>, <&kp O>, <&kp SPACE>, <&kp LS(s)>, <&kp I>, <&kp N>, <&kp SPACE>, <&kp LS(s)>, <&kp U>, <&kp I>
+<&kp LS(S)>, <&kp O>, <&kp SPACE>, <&kp LS(S)>, <&kp I>, <&kp N>, <&kp SPACE>, <&kp LS(S)>, <&kp U>, <&kp I>
                 ;};
 
         phone_number: phone_number {
