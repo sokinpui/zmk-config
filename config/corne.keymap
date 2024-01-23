@@ -13,18 +13,88 @@
 #define SYSTEM 3
 #define FUNCTION 4
 #define MACRO 5
-#define WINDOW_MANAGER 5
+#define WINDOW_MANAGER 6
+#define BLUETOOTH 7
 
 / {
+
+    // behaviors {
+    //     rpi: require_prior_idle {
+    // compatible = "zmk,behavior-hold-tap";
+    // flavor = "hold-preferred";
+    // tapping-term-ms = <200>;
+    // quick-tap-ms = <0>;
+    // require-prior-idle-ms = <125>;
+    // bindings = <&kp>, <&kp>;
+    //          };
+    // };
+
+    macros {
+
+        google_mail: google_mail {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <30>;
+            tap-ms = <40>;
+            bindings = <&kp S>, <&kp O>, <&kp S>, <&kp O>, <&kp K>, <&kp I>, <&kp N>, <&kp P>, <&kp U>, <&kp I>, <&kp AT>, <&kp G>, <&kp M>, <&kp A>, <&kp I>, <&kp L>, <&kp DOT>, <&kp C>, <&kp O>, <&kp M> ;
+                    };
+
+        cuhk_mail: cuhk_mail {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <30>;
+            tap-ms = <40>;
+            bindings =
+            <&kp N1>, <&kp N1>, <&kp N5>, <&kp N5>, <&kp N1>, <&kp N9>, <&kp N3>, <&kp N5>, <&kp N0>, <&kp N6>, <&kp AT>, <&kp L>, <&kp I>, <&kp N>, <&kp K>, <&kp DOT>, <&kp C>, <&kp U>, <&kp H>, <&kp K>, <&kp DOT>, <&kp E>, <&kp D>, <&kp U>, <&kp DOT>, <&kp H>, <&kp K>,
+                ;};
+
+        my_name: my_name {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <30>;
+            tap-ms = <40>;
+            bindings =
+<&kp LS(s)>, <&kp O>, <&kp SPACE>, <&kp LS(s)>, <&kp I>, <&kp N>, <&kp SPACE>, <&kp LS(s)>, <&kp U>, <&kp I>
+                ;};
+
+        phone_number: phone_number {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <30>;
+            tap-ms = <40>;
+            bindings =
+<&kp N5>, <&kp N5>, <&kp N3>, <&kp N2>, <&kp N9>, <&kp N4>, <&kp N7>, <&kp N0>
+                ;};
+
+        home_address: home_address {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <30>;
+            tap-ms = <40>;
+            bindings =
+<&kp F>, <&kp L>, <&kp A>, <&kp T>, <&kp SPACE>, <&kp 1>, <&kp 1>, <&kp 0>, <&kp 9>, <&kp COMMA>, <&kp SPACE>, <&kp L>, <&kp A>, <&kp P>, <&kp SPACE>, <&kp W>, <&kp A>, <&kp H>, <&kp SPACE>, <&kp H>, <&kp O>, <&kp U>, <&kp S>, <&kp E>, <&kp COMMA>, <&kp SPACE>, <&kp L>, <&kp O>, <&kp K>, <&kp SPACE>, <&kp W>, <&kp A>, <&kp H>, <&kp SPACE>, <&kp N>, <&kp O>, <&kp R>, <&kp T>, <&kp H>, <&kp SPACE>, <&kp E>, <&kp S>, <&kp T>, <&kp A>, <&kp T>, <&kp E>, <&kp COMMA>, <&kp SPACE>, <&kp N>, <&kp G>, <&kp A>, <&kp U>, <&kp SPACE>, <&kp T>, <&kp A>, <&kp U>, <&kp SPACE>, <&kp K>, <&kp O>, <&kp K>,
+                ;};
+
+        cuhk_sid: cuhk_sid {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <30>;
+            tap-ms = <40>;
+            bindings =
+<&kp N1>, <&kp N1>, <&kp N5>, <&kp N5>, <&kp N1>, <&kp N9>, <&kp N3>, <&kp N5>, <&kp N0>, <&kp N6>
+                ;};
+
+    };
+
         keymap {
                 compatible = "zmk,keymap";
 
                 default_layer {
                         bindings = <
-   &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp SQT
+   &lt MACRO TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp SQT
    &mt LALT EQUAL &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &mt LALT MINUS
-   &mt LCTRL ESC  &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp DEL
-                  &kp LGUI &mo NAVIGATION ESC &mt LSHIFT SPACE   &mo NUMBER RET &kp BSPC &kp LNLCK
+   &mo NAVIGATION  &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp DEL
+                  &kp LGUI &mt LCTRL ESC &mt LSHIFT SPACE   &mt NUMBER RET &kp BSPC &kp F13
                         >;
                 };
 
@@ -33,56 +103,55 @@
    &kp LS(TAB)   &kp TILDE &kp GRAVE &kp LBRC &kp LBKT &kp LPAR   &kp RPAR &kp RBKT  &kp RBRC     &kp BSLH   &kp PIPE    &kp DQT
    &kp PLUS &kp N1 &kp N2 &kp N3 &kp N4 &kp N5   &kp N6 &kp N7  &kp N8     &kp N9   &kp N0 &kp UNDER
    &trans &kp LS(Z) &kp LS(X) &kp LS(C) &kp LS(V) &kp LS(B)   &none &trans  &trans &trans &trans &trans
-                  &trans &trans &trans   &trans &trans &trans
+                  &FUNCTION &trans &trans   &trans &mo FUNCTION &mo BLUETOOTH
                         >;
                 };
 
                 NAVIGATION {
                         bindings = <
    &kp CAPS   &kp LC(Q) &kp LC(W) &kp LC(E) &kp LC(R) &kp LC(T)   &kp LS(LEFT) &kp LS(DOWN)  &kp LS(UP)     &kp LS(RIGHT)   &none    &none
-   &kp LC(EQUAL) &kp LC(A) &mo SYSTEM &kp LC(D) &mo FUNCTION &mo WINDOW_MANAGER   &kp LEFT &kp DOWN  &kp UP     &kp RIGHT   &kp LC(MINUS) &trans
+   &none &none &none &none &none &none   &kp LEFT &kp DOWN  &kp UP     &kp RIGHT   &kp LC(MINUS) &trans
    &trans &kp LC(Z) &kp LC(X) &kp LC(C) &kp LC(V) &kp LC(B)   &kp HOME &kp PG_DN  &kp PG_UP &kp END &trans &trans
-                  &kp LGUI &mo 1 &kp SPACE   &kp RSHIFT &kp LC(BSPC) &trans
+                  &mo WINDOW_MANAGER &trans &trans   &kp RSHIFT &kp LC(BSPC) &trans
                         >;
                 };
 
-                SYSTEM {
+                FUNCTION {
                         bindings = <
-   &none &none &none &none &none &none   &kp C_MUTE &kp C_VOL_DN  &kp C_VOL_UP     &none   &none &none
-   &none &none &none &none &none &none   &none &kp C_BRI_DN  &kp C_BRI_UP     &none   &none &none
+   &none &C_MUTE &C_VOL_DN &C_VOL_UP &C_BRI_DN &C_BRI_UP   &kp C_MUTE &kp C_VOL_DN  &kp C_VOL_UP     &none   &none &none
+   &none &kp F1 &kp F2 &kp F3 &kp F4 &kp F5   &kp F6 &kp F7  &kp F8     &kp F9   &kp F0 &none
    &none &none &none &none &none &none   &none &none  &none     &none   &none &none
                   &trans &trans &trans   &trans &trans &trans
                         >;
                 };
 
 
-                FUNCTION {
+                MACRO {
                         bindings = <
-   &none   &none &none &none &none &none   &none &kp F1   &kp F2    &kp F3    &kp F4     &none
-   &none &none &none &none &none &none   &none &kp F5   &kp F6      &kp F7    &kp F8  &none
-   &none &none &none &none &none &none   &none &kp F9   &kp F10  &kp F11  &kp F12  &none
+   &none &none &none &none &none &none   &none &google_mail  &my_name &phone_number &home_address &none
+   &none &none &none &none &none &none   &none &cuhk_mail  &cuhk_sid &none &none &none
+   &none &none &none &none &none &none   &none &none  &none &none &none &none
                   &trans &trans &trans   &trans &trans &trans
                         >;
                 };
-
 
                 WINDOW_MANAGER {
                         bindings = <
    &none &none &none &none &none &none   &none &none  &none &none &none &none
-   &none &none &none &none &none &none   &kp LG(LEFT) &kp LG(DOWN)  &kp LG(UP) &kp LG(LEFT) &none &none
-   &none &none &none &none &none &none   &none &kp LG(1)  &kp LG(2) &kp LG(3) &none &none
+   &none &none &none &none &none &none   &kp LG(LEFT) &kp LG(DOWN)  &kp LG(UP) &kp LG(RIGHT) &none &none
+   &none &none &none &none &none &none   &none &kp LG(N1)  &kp LG(N2) &kp LG(N3) &none &none
                   &trans &trans &trans   &trans &trans &trans
                         >;
                 };
 
-                //WINDOW_MANAGER {
-                        //bindings = <
-   //&none &none &none &none &none &none   &none &none  &none &none &none &none
-   //&none &none &none &none &none &none   &none &none  &none &none &none &none
-   //&none &none &none &none &none &none   &none &none  &none &none &none &none
-                  //&trans &trans &trans   &trans &trans &trans
-                        //>;
-                //};
+                BLUETOOTH {
+                        bindings = <
+   &none &none &none &none &none &none   &none &none  &none &none &none &none
+   &none &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &none &none  &none &none &none &none
+   &none &none &none &bt BT_CLR &none &none   &none &none  &none &none &none &none
+                  &trans &trans &trans   &trans &trans &trans
+                        >;
+                };
 
 
 
