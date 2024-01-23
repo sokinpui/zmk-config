@@ -9,12 +9,18 @@
 #include <dt-bindings/zmk/bt.h>
 
 #define NUMBER 1
-#define NAVIGATION 2
-#define SYSTEM 3
-#define FUNCTION 4
-#define MACRO 5
-#define WINDOW_MANAGER 6
-#define BLUETOOTH 7
+#define EXTRA 2
+#define NAVIGATION 3
+#define SYSTEM 4
+#define FUNCTION 5
+#define MACRO 6
+#define WINDOW_MANAGER 7
+#define BLUETOOTH 8
+
+&lt {
+    flavor = "hold-preferred";
+    quick-tap-ms = <0>;
+}
 
 / {
 
@@ -92,9 +98,9 @@
                 default_layer {
                         bindings = <
    &lt MACRO TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp SQT
-   &mt LALT EQUAL &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &mt LALT MINUS
+   &lt EXTRA EQUAL &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &mt LALT MINUS
    &mo NAVIGATION  &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp DEL
-                  &kp LGUI &mt LCTRL ESC &mt LSHIFT SPACE   &mt NUMBER RET &kp BSPC &kp F13
+                  &kp LGUI &mt LCTRL ESC &mt LSHIFT SPACE   &lt NUMBER RET &kp BSPC &mt LALT F13
                         >;
                 };
 
@@ -104,6 +110,15 @@
    &kp PLUS &kp N1 &kp N2 &kp N3 &kp N4 &kp N5   &kp N6 &kp N7  &kp N8     &kp N9   &kp N0 &kp UNDER
    &trans &kp LS(Z) &kp LS(X) &kp LS(C) &kp LS(V) &kp LS(B)   &none &trans  &trans &trans &trans &trans
                   &mo FUNCTION &trans &trans   &trans &mo FUNCTION &mo BLUETOOTH
+                        >;
+                };
+
+                EXTRA {
+                        bindings = <
+   &kp LA(TAB)   &kp LA(Q) &kp LA(W) &kp LA(E) &kp LA(R) &kp LA(T)   &kp LA(Y) &kp RBKT  &kp LBKT     &kp BSLH   &kp LA(P)    &kp LA(SQT)
+   &trans &kp LA(A) &kp LA(S) &kp LA(D) &kp LA(F) &kp LA(G)   &kp LA(H) &kp RBRC  &kp LBRC     &kp PIPE   &kp LA(SEMI) &kp LA(MINUS)
+   &trans  &kp LA(Z) &kp LA(X) &kp LA(C) &kp LA(V) &kp LA(B)   &kp LA(N) &kp RPAR  &kp LPAR &kp LA(DOT) &kp LA(FSLH) &kp LA(DEL)
+                  &trans &trans &trans   &trans &trans &trans
                         >;
                 };
 
