@@ -16,4 +16,8 @@ west build -b nice_nano_v2 -- -DSHIELD=corne_right -DZMK_CONFIG="/home/so/zmk-co
 mv ~/zmk/app/build/zephyr/zmk.uf2 ~/zmk-config/built-firmware/right.uf2
 }
 ```
+then run
+```
+f
+```
 

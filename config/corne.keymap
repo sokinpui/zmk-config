@@ -11,16 +11,15 @@
 #define NUMBER 1
 #define EXTRA 2
 #define NAVIGATION 3
-#define SYSTEM 4
-#define FUNCTION 5
-#define MACRO 6
-#define WINDOW_MANAGER 7
-#define BLUETOOTH 8
+#define FUNCTION 4
+#define MACRO 5
+#define WINDOW_MANAGER 6
+#define BLUETOOTH 7
 
 &lt {
     flavor = "hold-preferred";
     quick-tap-ms = <0>;
-}
+};
 
 / {
 
@@ -118,14 +117,14 @@
    &kp LA(TAB)   &kp LA(Q) &kp LA(W) &kp LA(E) &kp LA(R) &kp LA(T)   &kp LA(Y) &kp RBKT  &kp LBKT     &kp BSLH   &kp LA(P)    &kp LA(SQT)
    &trans &kp LA(A) &kp LA(S) &kp LA(D) &kp LA(F) &kp LA(G)   &kp LA(H) &kp RBRC  &kp LBRC     &kp PIPE   &kp LA(SEMI) &kp LA(MINUS)
    &trans  &kp LA(Z) &kp LA(X) &kp LA(C) &kp LA(V) &kp LA(B)   &kp LA(N) &kp RPAR  &kp LPAR &kp LA(DOT) &kp LA(FSLH) &kp LA(DEL)
-                  &trans &trans &trans   &trans &trans &trans
+                  &trans &trans &kp LA(SPACE)   &kp LA(RET) &kp LA(COMMA) &kp LA(DOT)
                         >;
                 };
 
                 NAVIGATION {
                         bindings = <
    &kp CAPS   &kp LC(Q) &kp LC(W) &kp LC(E) &kp LC(R) &kp LC(T)   &kp LS(LEFT) &kp LS(DOWN)  &kp LS(UP)     &kp LS(RIGHT)   &none    &none
-   &none &none &none &none &none &none   &kp LEFT &kp DOWN  &kp UP     &kp RIGHT   &kp LC(MINUS) &trans
+   &none &kp LC(A) &kp LC(S) &kp LC(D) &kp LC(F) &kp LC(G)   &kp LEFT &kp DOWN  &kp UP     &kp RIGHT   &kp LC(MINUS) &trans
    &trans &kp LC(Z) &kp LC(X) &kp LC(C) &kp LC(V) &kp LC(B)   &kp HOME &kp PG_DN  &kp PG_UP &kp END &trans &trans
                   &mo WINDOW_MANAGER &trans &trans   &kp RSHIFT &kp LC(BSPC) &trans
                         >;
