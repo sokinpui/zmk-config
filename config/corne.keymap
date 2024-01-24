@@ -21,6 +21,10 @@
     quick-tap-ms = <0>;
 };
 
+&sl {
+    release-after-ms = <2000>;
+};
+
 / {
 
     // behaviors {
@@ -40,7 +44,7 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <30>;
-            tap-ms = <40>;
+            tap-ms = <30>;
             bindings = <&kp S>, <&kp O>, <&kp S>, <&kp O>, <&kp K>, <&kp I>, <&kp N>, <&kp P>, <&kp U>, <&kp I>, <&kp AT>, <&kp G>, <&kp M>, <&kp A>, <&kp I>, <&kp L>, <&kp DOT>, <&kp C>, <&kp O>, <&kp M> ;
                     };
 
@@ -48,7 +52,7 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <30>;
-            tap-ms = <40>;
+            tap-ms = <30>;
             bindings =
             <&kp N1>, <&kp N1>, <&kp N5>, <&kp N5>, <&kp N1>, <&kp N9>, <&kp N3>, <&kp N5>, <&kp N0>, <&kp N6>, <&kp AT>, <&kp L>, <&kp I>, <&kp N>, <&kp K>, <&kp DOT>, <&kp C>, <&kp U>, <&kp H>, <&kp K>, <&kp DOT>, <&kp E>, <&kp D>, <&kp U>, <&kp DOT>, <&kp H>, <&kp K>
                 ;};
@@ -57,7 +61,7 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <30>;
-            tap-ms = <40>;
+            tap-ms = <30>;
             bindings =
 <&kp LS(S)>, <&kp O>, <&kp SPACE>, <&kp LS(S)>, <&kp I>, <&kp N>, <&kp SPACE>, <&kp LS(S)>, <&kp U>, <&kp I>
                 ;};
@@ -66,7 +70,7 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <30>;
-            tap-ms = <40>;
+            tap-ms = <30>;
             bindings =
 <&kp N5>, <&kp N5>, <&kp N3>, <&kp N2>, <&kp N9>, <&kp N4>, <&kp N7>, <&kp N0>
                 ;};
@@ -75,7 +79,7 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <30>;
-            tap-ms = <40>;
+            tap-ms = <30>;
             bindings =
 <&kp N1>, <&kp N1>, <&kp N5>, <&kp N5>, <&kp N1>, <&kp N9>, <&kp N3>, <&kp N5>, <&kp N0>, <&kp N6>
                 ;};
@@ -96,19 +100,19 @@
 
                 NUMBER {
                         bindings = <
-   &kp LS(TAB)   &kp TILDE &kp GRAVE &kp LBRC &kp LBKT &kp LPAR   &kp RPAR &kp RBKT  &kp RBRC     &kp BSLH   &kp PIPE    &kp DQT
+   &kp LS(TAB)   &kp TILDE &kp GRAVE &kp LPAR &kp RPAR &kp BSLH   &none &kp LBKT  &kp RBKT     &kp BSLH   &kp PIPE    &kp DQT
    &kp PLUS &kp N1 &kp N2 &kp N3 &kp N4 &kp N5   &kp N6 &kp N7  &kp N8     &kp N9   &kp N0 &kp UNDER
-   &trans &kp LS(Z) &kp LS(X) &kp LS(C) &kp LS(V) &kp LS(B)   &none &trans  &trans &trans &trans &trans
-                  &mo FUNCTION &trans &trans   &trans &mo FUNCTION &mo BLUETOOTH
+   &trans &kp LS(Z) &kp LS(X) &kp LS(C) &kp LS(V) &kp LS(B)   &kp EQUAL &kp MINUS  &trans &trans &trans &trans
+                  &mo FUNCTION &trans &trans   &trans &mo FUNCTION &sl BLUETOOTH
                         >;
                 };
 
                 EXTRA {
                         bindings = <
    &kp LA(TAB)   &kp LA(Q) &kp LA(W) &kp LA(E) &kp LA(R) &kp LA(T)   &kp LA(Y) &kp RBKT  &kp LBKT     &kp BSLH   &kp LA(P)    &kp LA(SQT)
-   &trans &kp LA(A) &kp LA(S) &kp LA(D) &kp LA(F) &kp LA(G)   &kp LA(H) &kp RBRC  &kp LBRC     &kp PIPE   &kp LA(SEMI) &kp LA(MINUS)
+   &trans &kp LA(A) &kp LA(S) &kp LA(D) &kp LA(F) &kp LA(G)   &kp LA(H) &kp RBRC  &kp LBRC     &kp LA(L)   &kp LA(SEMI) &kp LA(MINUS)
    &trans  &kp LA(Z) &kp LA(X) &kp LA(C) &kp LA(V) &kp LA(B)   &kp LA(N) &kp RPAR  &kp LPAR &kp LA(DOT) &kp LA(FSLH) &kp LA(DEL)
-                  &kp PSCRN &kp PSCRN &kp LA(SPACE)   &kp LA(RET) &kp LA(COMMA) &kp LA(DOT)
+                  &kp PSCRN &kp PSCRN &kp LA(SPACE)   &kp LA(RET) &kp LA(BSPC) &kp LA(DOT)
                         >;
                 };
 
@@ -125,7 +129,7 @@
                         bindings = <
    &none &kp C_MUTE &kp C_VOL_DN &kp C_VOL_UP &kp C_BRI_DN &kp C_BRI_UP   &kp C_MUTE &kp C_VOL_DN  &kp C_VOL_UP     &none   &none &none
    &none &kp F1 &kp F2 &kp F3 &kp F4 &kp F5   &kp F6 &kp F7  &kp F8     &kp F9   &kp F10 &none
-   &none &none &none &none &none &none   &none &none  &none     &none   &none &none
+   &none &none &none &none &none &none   &none &none  &none &none &none &none
                   &trans &trans &trans   &trans &trans &trans
                         >;
                 };
