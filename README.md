@@ -21,3 +21,11 @@ then run
 f
 ```
 
+# how to build both corne-mx and corne-choc?
+It is a simple work around, first build choc-mx with `zmk-build-firmware corne` command, then rename the firmware built, then rename the keyboard to "corne-choc"
+run the command `zmk-build-firmware corne` again to build for corne-choc. Don't forget to rename the keyboard to corne, since mx will be used more often.
+
+---
+
+Update on Fri Feb  2 09:22:44 PM HKT 2024
+command `zmk-build-firmware` has changed so that it can build different firmware correctly
