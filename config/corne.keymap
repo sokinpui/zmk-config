@@ -9,12 +9,11 @@
 #include <dt-bindings/zmk/bt.h>
 
 #define NUMBER 1
-#define EXTRA 2
-#define NAVIGATION 3
-#define FUNCTION 4
-#define MACRO 5
-#define WINDOW_MANAGER 6
-#define BLUETOOTH 7
+#define NAVIGATION 2
+#define FUNCTION 3
+#define MACRO 4
+#define WINDOW_MANAGER 5
+#define BLUETOOTH 6
 
 &lt {
     flavor = "hold-preferred";
@@ -42,7 +41,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&sl WINDOW_MANAGER>, <&sl FUNCTION>, <&sl BLUETOOTH>;
+            bindings = <&mo WINDOW_MANAGER>, <&sl FUNCTION>, <&sl BLUETOOTH>;
                        };
 
     };
@@ -109,21 +108,21 @@
 
                 NUMBER {
                         bindings = <
-   &kp LS(TAB)   &kp TAB &kp GRAVE &kp LPAR &kp RPAR &kp BSLH   &kp PIPE &kp LBKT  &kp RBKT     &kp SQT   &kp SQT    &kp DQT
-   &kp PLUS &kp N1 &kp N2 &kp N3 &kp N4 &kp N5   &kp N6 &kp N7  &kp N8     &kp N9   &kp N0 &kp UNDER
+   &kp LS(TAB) &kp N1 &kp N2 &kp N3 &kp N4 &kp N5   &kp N6 &kp N7  &kp N8     &kp N9   &kp N0 &kp DQT
+   &kp  PLUS  &kp BSLH &kp GRAVE &kp LBKT &kp RBKT &kp EQUAL   &kp MINUS &kp LPAR  &kp RPAR     &kp SQT   &none &kp UNDER
    &trans &kp LS(Z) &kp LS(X) &kp LS(C) &kp LS(V) &kp LS(B)   &none &kp EQUAL  &kp MINUS &trans &trans &trans
                   &trans &trans &trans   &trans &mo FUNCTION &sl BLUETOOTH
                         >;
                 };
 
-                EXTRA {
-                        bindings = <
-   &kp LA(TAB)   &kp LA(Q) &kp LA(W) &kp LA(E) &kp LA(R) &kp LA(T)   &kp LA(Y) &kp RBKT  &kp LBKT     &kp BSLH   &kp LA(P)    &kp LA(SQT)
-   &trans &kp LA(A) &kp LA(S) &kp LA(D) &kp LA(F) &kp LA(G)   &kp LA(H) &kp RBRC  &kp LBRC     &kp LA(L)   &kp LA(SEMI) &kp LA(MINUS)
-   &trans  &kp LA(Z) &kp LA(X) &kp LA(C) &kp LA(V) &kp LA(B)   &kp LA(N) &kp RPAR  &kp LPAR &kp LA(DOT) &kp LA(FSLH) &kp LA(DEL)
-                  &kp PSCRN &kp PSCRN &kp LA(SPACE)   &kp LA(RET) &kp LA(BSPC) &kp LA(DOT)
-                        >;
-                };
+   //              EXTRA {
+   //                      bindings = <
+   // &kp LA(TAB)   &kp LA(Q) &kp LA(W) &kp LA(E) &kp LA(R) &kp LA(T)   &kp LA(Y) &kp RBKT  &kp LBKT     &kp BSLH   &kp LA(P)    &kp LA(SQT)
+   // &trans &kp LA(A) &kp LA(S) &kp LA(D) &kp LA(F) &kp LA(G)   &kp LA(H) &kp RBRC  &kp LBRC     &kp LA(L)   &kp LA(SEMI) &kp LA(MINUS)
+   // &trans  &kp LA(Z) &kp LA(X) &kp LA(C) &kp LA(V) &kp LA(B)   &kp LA(N) &kp RPAR  &kp LPAR &kp LA(DOT) &kp LA(FSLH) &kp LA(DEL)
+   //                &kp PSCRN &kp PSCRN &kp LA(SPACE)   &kp LA(RET) &kp LA(BSPC) &kp LA(DOT)
+   //                      >;
+   //              };
 
                 NAVIGATION {
                         bindings = <
