@@ -14,6 +14,8 @@
 #define MACRO 4
 #define WINDOW_MANAGER 5
 #define BLUETOOTH 6
+#define GAME 7
+#define GAME_NUMBER 8
 
 &lt {
     flavor = "hold-preferred";
@@ -24,35 +26,36 @@
     release-after-ms = <2000>;
 };
 
-&kp Z{
-    behaviors = &mt{
-        flavor = "tap_preferred";
-        quick-tap-ms = <200>;
-        tapping-term-ms = <200>;
-        hold = &kp LALT;
-        tap = &kp Z
-    }
-}
-
 / {
 
     behaviors {
-        rpi: require_prior_idle {
-                 compatible = "zmk,behavior-hold-tap";
-                 #binding-cells = <2>;
-                 flavor = "hold-preferred";
-                 tapping-term-ms = <200>;
-                 quick-tap-ms = <200>;
-                 require-prior-idle-ms = <125>;
-                 bindings = <&mo>, <&kp>;
-             };
 
-                wfb: window_function_bluetooth {
+        rpi: require_prior_idle {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <200>;
+            require-prior-idle-ms = <125>;
+            bindings = <&kp>, <&kp>;
+     };
+
+        ltrpi: layer_tap_require_prior_idle {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <200>;
+            require-prior-idle-ms = <125>;
+            bindings = <&mo>, <&kp>;
+     };
+
+        wfb: window_function_bluetooth {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&mo WINDOW_MANAGER>, <&sl FUNCTION>, <&sl BLUETOOTH>;
-                       };
+           };
 
     };
 
@@ -111,7 +114,7 @@
                         bindings = <
    &lt MACRO TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp SQT
    &mt LALT EQUAL &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp MINUS
-   &mo NAVIGATION  &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &mt LSHIFT DEL
+   &mo NAVIGATION  &rpi LALT Z &ltrpi NAVIGATION X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &mt LSHIFT DEL
                   &kp LGUI &mt LCTRL ESC &mt LSHIFT SPACE   &lt NUMBER RET &kp BSPC &wfb
                         >;
                 };
@@ -120,7 +123,7 @@
                         bindings = <
    &kp LS(TAB) &kp N1 &kp N2 &kp N3 &kp N4 &kp N5   &kp N6 &kp N7  &kp N8     &kp N9   &kp N0 &kp DQT
    &kp  PLUS  &kp BSLH &kp GRAVE &kp LBKT &kp RBKT &kp EQUAL   &kp MINUS &kp SQT  &none     &none  &none &kp UNDER
-   &trans &kp LS(Z) &kp LS(X) &kp LS(C) &kp LS(V) &kp LS(B)   &none &none  &kp LS(COMMA) kp LS(DOT) &trans &trans
+   &trans &kp LS(Z) &kp LS(X) &kp LS(C) &kp LS(V) &kp LS(B)   &none &none  &kp LT &kp GT &trans &trans
                   &trans &mt LCTRL LS(TAB) &mt LSHIFT TAB   &trans &mo FUNCTION &sl BLUETOOTH
                         >;
                 };
@@ -155,7 +158,7 @@
 
                 MACRO {
                         bindings = <
-   &none &none &none &none &none &none   &none &google_mail  &my_name &phone_number &none &none
+   &none &none &none &none &none &tog GAME   &none &google_mail  &my_name &phone_number &none &none
    &none &none &none &none &none &none   &none &cuhk_mail  &cuhk_sid &none &none &none
    &none &none &none &none &none &none   &none &none  &none &none &none &none
                   &trans &trans &trans   &trans &trans &trans
@@ -164,9 +167,9 @@
 
                 WINDOW_MANAGER {
                         bindings = <
-   &none &none &none &none &none &none   &none &none  &none &none &none &none
+   &none &none &none &none &none &none   &kp LG(N5) &kp LG(N6)  &kp LG(N7) &kp LG(N8) &kp LG(N9) &none
    &none &none &none &none &none &none   &kp LG(LEFT) &kp LG(DOWN)  &kp LG(UP) &kp LG(RIGHT) &none &none
-   &none &none &none &none &none &none   &none &kp LG(N1)  &kp LG(N2) &kp LG(N3) &none &none
+   &none &none &none &none &none &none   &none &kp LG(N1)  &kp LG(N2) &kp LG(N3) &kp LG(N4) &none
                   &trans &trans &trans   &trans &trans &trans
                         >;
                 };
@@ -180,7 +183,23 @@
                         >;
                 };
 
+                GAME {
+                        bindings = <
+   &tog GAME  &kp TAB    &kp Q &kp W &kp E &kp R    &kp Y &kp U  &kp I     &kp O   &kp P    &kp SQT
+   &none      &kp LCTRL  &kp A &kp S &kp D &kp F    &kp H &kp J  &kp K     &kp L   &kp SEMI &kp MINUS
+   &none      &kp LSHIFT &kp Z &kp X &kp C &kp V    &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &mt LSHIFT DEL
+                  &kp LGUI &mo GAME_NUMBER &kp SPACE   &lt NUMBER RET &kp BSPC &wfb
+                        >;
+                };
 
+                GAME_NUMBER {
+                        bindings = <
+   &tog GAME  &kp N1  &kp N2 &kp N3 &kp N4 &kp N5    &kp Y &kp U  &kp I     &kp O   &kp P    &kp SQT
+   &none      &kp N6  &kp N7 &kp N8 &kp N9 &kp N0    &kp H &kp J  &kp K     &kp L   &kp SEMI &kp MINUS
+   &none      &kp LSHIFT &kp Z &kp X &kp C &kp V    &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &mt LSHIFT DEL
+                  &kp LGUI &mo GAME_NUMBER &kp SPACE   &lt NUMBER RET &kp BSPC &wfb
+                        >;
+                };
 
         };
 };
