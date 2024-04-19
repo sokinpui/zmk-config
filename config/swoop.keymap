@@ -114,18 +114,18 @@
 
                 default_layer {
                         bindings = <
-   &lt MACRO TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp LG(N1)
-   &lt UPPER EQUAL &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp LG(N2)
-   &lt LOWER DEL  &rpi LALT Z &ltrpi NAVIGATION X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &rpi LGUI FSLH &kp LG(N3)
+     &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P
+     &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI
+     &rpi LALT Z &ltrpi NAVIGATION X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &rpi LGUI FSLH
                   &kp LGUI &mt LCTRL ESC &mt LSHIFT SPACE   &lt NUMBER RET &kp BSPC &wfb
                         >;
                 };
 
                 NUMBER {
                         bindings = <
-   &kp LS(TAB) &kp N1 &kp N2 &kp N3 &kp N4 &kp N5   &kp N6 &kp N7  &kp N8     &kp N9   &kp N0 &kp DQT
-   &kp  PLUS  &kp BSLH &kp GRAVE &kp LBKT &kp RBKT &kp EQUAL   &kp MINUS &kp SQT  &none     &none  &none &kp UNDER
-   &trans &kp LS(Z) &kp LS(X) &kp LS(C) &kp LS(V) &kp LS(B)   &none &none  &kp LT &kp GT &trans &trans
+   &kp N1 &kp N2 &kp N3 &kp N4 &kp N5   &kp N6 &kp N7  &kp N8     &kp N9   &kp N0
+   &kp BSLH &kp GRAVE &kp LBKT &kp RBKT &kp EQUAL   &kp MINUS &kp SQT  &none     &none  &none
+   &kp LS(Z) &kp LS(X) &kp LS(C) &kp LS(V) &kp LS(B)   &none &none  &kp LT &kp GT &trans
                   &trans &mt LCTRL LS(TAB) &mt LSHIFT TAB   &trans &mo FUNCTION &sl BLUETOOTH
                         >;
                 };
@@ -141,18 +141,18 @@
 
                 NAVIGATION {
                         bindings = <
-   &kp CAPS   &kp LC(Q) &kp UP &kp LC(E) &kp LC(R) &kp LC(T)   &kp LS(LEFT) &kp LS(DOWN)  &kp LS(UP)     &kp LS(RIGHT)   &kp CAPS    &none
-   &none &kp LEFT &kp DOWN &kp RIGHT &kp LC(F) &kp LC(G)   &kp LEFT &kp DOWN  &kp UP     &kp RIGHT   &kp LC(MINUS) &trans
-   &trans &kp LC(Z) &kp LC(X) &kp LC(C) &kp LC(V) &kp LC(B)   &kp HOME &kp PG_DN  &kp PG_UP &kp END &trans &trans
+   &kp LC(Q) &kp UP &kp LC(E) &kp LC(R) &kp LC(T)   &kp LS(LEFT) &kp LS(DOWN)  &kp LS(UP)     &kp LS(RIGHT)   &kp CAPS
+   &kp LEFT &kp DOWN &kp RIGHT &kp LC(F) &kp LC(G)   &kp LEFT &kp DOWN  &kp UP     &kp RIGHT   &kp LC(MINUS) &trans
+   &kp LC(Z) &kp LC(X) &kp LC(C) &kp LC(V) &kp LC(B)   &kp HOME &kp PG_DN  &kp PG_UP &kp END &trans &trans
                   &trans &trans &trans   &kp RSHIFT &kp DEL &trans
                         >;
                 };
 
                 FUNCTION {
                         bindings = <
-   &none &kp C_MUTE &kp C_VOL_DN &kp C_VOL_UP &kp C_BRI_DN &kp C_BRI_UP   &kp C_MUTE &kp C_VOL_DN  &kp C_VOL_UP     &none   &none &none
-   &none &kp F1 &kp F2 &kp F3 &kp F4 &kp F5   &kp F6 &kp F7  &kp F8     &kp F9   &kp F10 &none
-   &none &kp F11 &kp F11 &none &none &none   &none &none  &none &none &none &none
+   &kp C_MUTE &kp C_VOL_DN &kp C_VOL_UP &kp C_BRI_DN &kp C_BRI_UP   &kp C_MUTE &kp C_VOL_DN  &kp C_VOL_UP     &none   &none
+   &kp F1 &kp F2 &kp F3 &kp F4 &kp F5   &kp F6 &kp F7  &kp F8     &kp F9   &kp F10
+   &kp F11 &kp F11 &none &none &none   &none &none  &none &none &none
                   &trans &trans &trans   &trans &trans &trans
                         >;
                 };
@@ -160,49 +160,49 @@
 
                 MACRO {
                         bindings = <
-   &none &none &none &none &none &none   &none &google_mail  &my_name &phone_number &none &none
-   &none &none &none &none &none &none   &none &cuhk_mail  &cuhk_sid &none &none &none
-   &none &none &none &none &none &none   &none &none  &none &none &none &none
+   &none &none &none &none &none   &none &google_mail  &my_name &phone_number &none
+   &none &none &none &none &none   &none &cuhk_mail  &cuhk_sid &none &none
+   &none &none &none &none &none   &none &none  &none &none &none
                   &trans &trans &trans   &trans &trans &trans
                         >;
                 };
 
                 WINDOW_MANAGER {
                         bindings = <
-   &none &none &none &none &none &none   &kp LG(N5) &kp LG(N6)  &kp LG(N7) &kp LG(N8) &kp LG(N9) &none
-   &none &none &none &none &none &none   &kp LG(LEFT) &kp LG(DOWN)  &kp LG(UP) &kp LG(RIGHT) &none &none
-   &none &none &none &none &none &none   &none &kp LG(N1)  &kp LG(N2) &kp LG(N3) &kp LG(N4) &none
+   &none &none &none &none &none   &none &kp LG(N6)  &kp LG(N7) &kp LG(N9) &none
+   &none &none &none &none &none   &none &kp LG(N4)  &kp LG(N5) &kp LG(N6) &none
+   &none &none &none &none &none   &none &kp LG(N1)  &kp LG(N2) &kp LG(N3) &kp LG(N0)
                   &mo MACRO &kp LG(LS(TAB)) &kp LG(TAB)   &trans &trans &trans
                         >;
                 };
 
                 BLUETOOTH {
                         bindings = <
-   &none &bt BT_DISC 0 &bt BT_DISC 1 &bt BT_DISC 2 &bt BT_DISC 3 &bt BT_DISC 4   &none &none  &none &none &none &none
-   &none &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &none &none  &none &none &none &none
-   &none &none &none &bt BT_CLR &bt BT_CLR_ALL &none   &none &none  &none &none &none &none
-                  &trans &trans &trans   &trans &trans &trans
-                        >;
-                };
+   &bt BT_DISC 0 &bt BT_DISC 1 &bt BT_DISC 2 &bt BT_DISC 3 &bt BT_DISC 4   &none &none  &none &none &none
+   &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &none &none  &none &none &none
+   &bootloader &none &bt BT_CLR &bt BT_CLR_ALL &none   &none &none  &none &none &bootloader
+            &trans &trans &trans   &trans &trans &trans
+                      >;
+              };
 
 
-                LOWER {
-                        bindings = <
-   &none &none &none &none &none &none   &none &none  &none &none &none &kp LG(N4)
-   &none &none &none &none &none &none   &kp LG(LEFT) &kp LG(DOWN)  &kp LG(UP) &kp LG(RIGHT) &none &kp LG(N5)
-   &none &none &none &none &none &none   &none &none  &none &none &none &kp LG(N6)
-                  &trans &trans &trans   &trans &trans &trans
-                        >;
-                };
-
-                UPPER {
-                        bindings = <
-   &none &none &none &none &none &none   &none &none  &none &kp LG(LS(LC(LA(N1)))) &kp LG(LS(LC(LA(N2)))) &kp LG(N7)
-   &none &none &none &none &none &none   &none &none  &none &kp LG(LS(LC(LA(N3)))) &kp LG(LS(LC(LA(N4)))) &kp LG(N8)
-   &none &none &none &none &none &none   &none &none  &none &none &none &kp LG(N9)
-                  &trans &trans &trans   &trans &trans &trans
-                        >;
-                };
+   //        LOWER {
+   //                bindings = <
+   // &none &none &none &none &none   &none &none  &none &none &none
+   // &none &none &none &none &none   &kp LG(LEFT) &kp LG(DOWN)  &kp LG(UP) &kp LG(RIGHT) &none
+   // &none &none &none &none &none   &none &none  &none &none &none
+   //          &trans &trans &trans   &trans &trans &trans
+   //                >;
+   //        };
+   //
+   //        UPPER {
+   //                bindings = <
+   // &none &none &none &none &none   &none &none  &none &kp LG(LS(LC(LA(N1)))) &kp LG(LS(LC(LA(N2)))) &kp LG(N7)
+   // &none &none &none &none &none   &none &none  &none &kp LG(LS(LC(LA(N3)))) &kp LG(LS(LC(LA(N4)))) &kp LG(N8)
+   // &none &none &none &none &none   &none &none  &none &none &none &kp LG(N9)
+   //                &trans &trans &trans   &trans &trans &trans
+   //                      >;
+   //              };
 
    //              GAME {
    //                      bindings = <
