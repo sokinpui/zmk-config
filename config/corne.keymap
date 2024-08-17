@@ -125,7 +125,7 @@
                         bindings = <
    &kp LS(TAB) &kp N1 &kp N2 &kp N3 &kp N4 &kp N5   &kp N6 &kp N7  &kp N8     &kp N9   &kp N0 &kp DQT
    &kp  PLUS  &kp N1 &kp GRAVE &kp LBKT &kp RBKT &kp EQUAL   &kp MINUS &kp SQT  &kp LS(SQT)     &kp N9  &kp N0 &kp UNDER
-   &trans &none &kp LS(GRAVE) &kp LS(LBKT) &kp LS(RBKT) &kp MINUS   &kp BSLH &none  &none &none &trans &trans
+   &trans &kp BSLH &kp LS(GRAVE) &kp LS(LBKT) &kp LS(RBKT) &kp MINUS   &kp BSLH &none  &none &none &trans &trans
                   &trans &mt LCTRL LS(TAB) &mt LSHIFT TAB   &trans &mo FUNCTION &sl BLUETOOTH
                         >;
                 };
@@ -169,9 +169,9 @@
 
                 WINDOW_MANAGER {
                         bindings = <
-   &none &none &none &none &none &none   &kp LG(N5) &kp LG(N6)  &kp LG(N7) &kp LG(N8) &kp LG(N9) &none
-   &none &none &none &none &none &none   &kp LG(LEFT) &kp LG(DOWN)  &kp LG(UP) &kp LG(RIGHT) &none &none
-   &none &none &none &none &none &none   &none &kp LG(N1)  &kp LG(N2) &kp LG(N3) &kp LG(N4) &none
+   &none &kp F1 &kp F2 &kp F3 &kp F4 &kp F5   &kp LG(N5) &kp LG(N6)  &kp LG(N7) &kp LG(N8) &kp LG(N9) &none
+   &none &kp F6 &kp F7 &kp F8 &kp F9 &kp F10   &kp LG(LEFT) &kp LG(DOWN)  &kp LG(UP) &kp LG(RIGHT) &none &none
+   &none &kp F11 &kp F12 &kp F13 &kp F14 &kp F15   &none &kp LG(N1)  &kp LG(N2) &kp LG(N3) &kp LG(N4) &none
                   &mo MACRO &kp LG(LS(TAB)) &kp LG(TAB)   &trans &trans &trans
                         >;
                 };
